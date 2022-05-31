@@ -16,9 +16,8 @@ $env:PYTHONIOENCODING = "utf-8"
 
 # https://github.com/mattparkes/PoShFuck
 try {
-  Import-Module PoShFuck
+  Import-Module PoShFuck -ErrorAction Stop
 } catch {
-  Set-ExecutionPolicy RemoteSigned
   Invoke-Expression ((New-Object net.webclient).DownloadString('https://raw.githubusercontent.com/mattparkes/PoShFuck/master/Install-TheFucker.ps1'))
   Import-Module PoShFuck
 }
